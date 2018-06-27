@@ -4,9 +4,15 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 
+signal pop(a)
+
 export (float) var coolDown=2
-export (NodePath) var parent=null
-export (PackedScene) var platform=null
+export (PackedScene) var object=null
+
+func doPop():
+	var node=object.instance()
+	node.position=position
+	emit_signal("pop", node)
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -15,14 +21,9 @@ func _ready():
 	$Timer.wait_time=coolDown
 	$Timer.start()
 
-	pop()
+	doPop()
 
 	pass
-
-func pop():
-	var node=platform.instance()
-	get_node(parent).add_child(node)
-	node.position=position
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

@@ -14,9 +14,11 @@ func get_input():
 		jumping = true
 		$AnimatedSprite.animation="Jump"
 		velocity.y = jump_speed
+
 	if Input.is_action_pressed('ui_right'):
 		$AnimatedSprite.flip_h=false
 		velocity.x += run_speed
+		
 	if Input.is_action_pressed('ui_left'):
 		$AnimatedSprite.flip_h=true
 		velocity.x -= run_speed

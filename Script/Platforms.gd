@@ -16,3 +16,6 @@ func _process(delta):
 		plat.position+=Vector2(-1, 0)*50*delta
 		pass
 	pass
+
+func doPop(object):
+	add_child(object)
