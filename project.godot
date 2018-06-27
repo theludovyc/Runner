@@ -11,7 +11,12 @@ config_version=3
 [application]
 
 config/name="Runner"
+run/main_scene="res://Scene/Game.tscn"
 config/icon="res://icon.png"
+
+[debug]
+
+settings/fps/force_fps=30
 
 [display]
 
