@@ -1,27 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scene/Sol.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Prefab/Buisson1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Prefab/Tree_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefab/Sol.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefab/Platform.tscn" type="PackedScene" id=4]
 
-[node name="Scene_0_0" type="Node2D"]
+[node name="Scene_0_0" type="Node2D" index="0"]
 
-[node name="Sol" parent="." index="0" instance=ExtResource( 1 )]
+[node name="Buisson1" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 507.735, 375.791 )
+
+[node name="Tree_2" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 1215.89, 218.794 )
+
+[node name="Sol" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 500 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="Sol2" parent="." index="1" instance=ExtResource( 1 )]
+[node name="Sol2" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 400, 500 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="Sol3" parent="." index="2" instance=ExtResource( 1 )]
+[node name="Sol3" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 800, 500 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="Sol4" parent="." index="3" instance=ExtResource( 1 )]
+[node name="Sol4" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 1200, 500 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Platform" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 800, 450 )
+
+[node name="Platform2" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 1234.26, 250 )
 
 

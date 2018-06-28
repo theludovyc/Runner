@@ -1,18 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Script/Platforms.gd" type="Script" id=1]
 [ext_resource path="res://Scene/Scene_0_0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefab/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefab/Monster.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node" index="0"]
 
 [node name="Scenes" type="Node" parent="." index="0"]
 
+editor/display_folded = true
 script = ExtResource( 1 )
-speed = 200
+speed = 350
 object = ExtResource( 2 )
 
 [node name="Scene_0_0" parent="Scenes" index="0" instance=ExtResource( 2 )]
 
 _sections_unfolded = [ "Transform" ]
+
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 435.871, 563.101 )
+
+[node name="Monster" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 376.408, 301.67 )
 
 

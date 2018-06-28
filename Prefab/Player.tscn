@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Script/Player.gd" type="Script" id=1]
-[ext_resource path="res://Art/Skeleton_gold/idle.png" type="Texture" id=2]
-[ext_resource path="res://Art/Skeleton_gold/run_00.png" type="Texture" id=3]
-[ext_resource path="res://Art/Skeleton_gold/run_01.png" type="Texture" id=4]
-[ext_resource path="res://Art/Skeleton_gold/jump.png" type="Texture" id=5]
+[ext_resource path="res://Art/Player/player_idle.png" type="Texture" id=2]
+[ext_resource path="res://Art/Player/player_run0.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -14,12 +12,12 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
@@ -28,7 +26,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.03136, 16.0507 )
+extents = Vector2( 58.5865, 114.956 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -41,11 +39,12 @@ __meta__ = {
 "_edit_group_": true
 }
 run_speed = 100
-jump_speed = -400
+jump_speed = -800
 gravity = 1200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+position = Vector2( 8.98105, -83.8232 )
 frames = SubResource( 1 )
 animation = "Idle"
 playing = true
