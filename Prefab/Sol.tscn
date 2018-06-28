@@ -5,9 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 200, 16 )
+extents = Vector2( 200, 8 )
 
-[node name="Sol" type="Sprite"]
+[node name="Sol" type="Sprite" index="0"]
 
 texture = ExtResource( 1 )
 centered = false
