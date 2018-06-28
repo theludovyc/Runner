@@ -1,9 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Prefab/Buisson1.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Prefab/Tree_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefab/Buisson_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Prefab/Arbre_1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Prefab/Sol.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefab/Platforme_P.tscn" type="PackedScene" id=4]
+
+
 
 
 [node name="Scene_0_0" type="Node2D" index="0"]
