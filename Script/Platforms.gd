@@ -5,27 +5,39 @@ extends Node
 # var b = "textvar"
 
 export (int) var speed=50
-export (PackedScene) var object=null
 
 var thread_pop
 
-func ready_doPop(x):
-	var node=object.instance()
-	node.position=Vector2(x, 0)
+var currentScene
+var afterScene
+
+func ready_doPop():
+	afterScene=load("res://Scene/Scene_"+str(currentScene.getSceneAfter())+".tscn")
+
+	var node=afterScene.instance()
+	node.position=Vector2(currentScene.position.x+1600, 0)
 	add_child(node)
 
+	currentScene=node
+
 func thread_doPop(userData):
-	var node=object.instance()
-	node.position=Vector2(get_child(get_child_count()-1).position.x+1600, 0)
+	afterScene=load("res://Scene/Scene_"+str(currentScene.getSceneAfter())+".tscn")
+
+	var node=afterScene.instance()
+	node.position=Vector2(currentScene.position.x+1600, 0)
 	add_child(node)
+
+	currentScene=node
 	return 0
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 
-	ready_doPop(1600)
-	ready_doPop(3200)
+	currentScene=get_child(0)
+
+	ready_doPop()
+	ready_doPop()
 
 	thread_pop=Thread.new()
 

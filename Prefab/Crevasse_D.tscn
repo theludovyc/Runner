@@ -5,9 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 104, 8 )
+extents = Vector2( 104, 100 )
 
-[node name="Crevasse_D" type="StaticBody2D" index="0"]
+[node name="Crevasse_D" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -20,13 +20,14 @@ bounce = 0.0
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 1 )
+centered = false
 region_enabled = true
 region_rect = Rect2( 400, 1200, 400, 400 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Offset", "Region" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -96, 8 )
+position = Vector2( 104, 300 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

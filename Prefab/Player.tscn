@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Script/Player.gd" type="Script" id=1]
-[ext_resource path="res://Art/Player/player_idle.png" type="Texture" id=2]
-[ext_resource path="res://Art/Player/player_run0.png" type="Texture" id=3]
+[ext_resource path="res://Art/Player/Idle.png" type="Texture" id=2]
+[ext_resource path="res://Art/Player/Run0.png" type="Texture" id=3]
+[ext_resource path="res://Art/Player/Run1.png" type="Texture" id=4]
+[ext_resource path="res://Art/Player/Jump.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -12,12 +14,12 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Run",
-"speed": 5.0
+"speed": 4.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
@@ -26,7 +28,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 58.5865, 114.956 )
+extents = Vector2( 68.167, 117.35 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -44,7 +46,6 @@ gravity = 1200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 8.98105, -83.8232 )
 frames = SubResource( 1 )
 animation = "Idle"
 playing = true
@@ -52,5 +53,6 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 
