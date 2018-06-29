@@ -16,15 +16,20 @@ var velocity = Vector2()
 var attack=false
 
 func startTimer():
+	$Timer.wait_time=Helper.rand_between(min_cooldown, max_cooldown)
+	$Timer.start()
 	pass
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	startTimer()
+
 	pass
 
 func onTimerStop():
 	attack=!attack
+	startTimer()
 	pass
 
 func _physics_process(delta):

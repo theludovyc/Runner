@@ -24,7 +24,6 @@ window/size/width=1600
 window/size/height=900
 window/size/resizable=false
 window/dpi/allow_hidpi=true
-window/vsync/use_vsync=false
 window/energy_saving/keep_screen_on=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"

@@ -30,6 +30,8 @@ run_speed_right = 100
 
 _sections_unfolded = [ "Transform" ]
 jump_speed = 200
+min_cooldown = 3
+max_cooldown = 10
 
 [connection signal="touchMonster" from="Player" to="." method="restart"]
 
