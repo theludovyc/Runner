@@ -40,7 +40,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-run_speed = 100
+run_speed_idle = 50
+run_speed_left = 100
+run_speed_right = 50
 jump_speed = -800
 gravity = 1200
 

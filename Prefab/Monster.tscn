@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Art/tilemap_monstre.png" type="Texture" id=1]
+[ext_resource path="res://Script/Monster.gd" type="Script" id=1]
+[ext_resource path="res://Art/tilemap_monstre.png" type="Texture" id=2]
 
 [node name="Monster" type="KinematicBody2D"]
 
@@ -8,14 +9,32 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
+script = ExtResource( 1 )
+jump_speed = 400
+gravity = 200
+min_cooldown = 2
+max_cooldown = 5
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 1 )
+position = Vector2( 0, 300 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
+position = Vector2( 0, 300 )
 build_mode = 0
-polygon = PoolVector2Array( 39.2047, -139.452, 191.446, -153.018, 226.115, -398.715, 187.894, -510.452, 122.824, -575.523, 40.5652, -601.305, -98.1691, -575.523, -270.052, -450.293, -450.53, -283.321, -805.346, -181.419, -809.029, 808.138, 20.9214, 813.048, 152.289, 745.523, 218.587, 630.116, 127.734, 455.777, -51.5151, 418.945, -126.407, 240.923, -49.0597, 37.1184 )
+polygon = PoolVector2Array( 179.831, -171.843, 220.443, -391.151, 180.733, -513.891, 92.288, -587.896, 16.478, -592.408, -88.2122, -570.748, -283.152, -436.276, -423.04, -292.778, -559.318, -225.993, -747.811, -184.171, -802.993, -175.453, -804.798, 803.76, 28.2105, 805.565, 116.656, 758.635, 175.318, 706.29, 205.824, 634.39, 187.912, 597.239, 173.98, 532.887, 130.858, 471.189, 47.2668, 468.535, -54.0588, 425.275, -124.381, 392.768, -166.84, 349.645, -218.587, 102.189, -172.148, 33.1935, -19.5609, -42.4365, -3.63876, -115.413, 31.5226, -161.852, 81.458, -199.82, 121.168, -170.94 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="onTimerStop"]
 
 

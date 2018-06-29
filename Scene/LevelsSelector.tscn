@@ -7,8 +7,6 @@
 [ext_resource path="res://Script/Next.gd" type="Script" id=5]
 [ext_resource path="res://Script/Previous.gd" type="Script" id=6]
 
-
-
 [node name="main" type="Node"]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." index="0"]
@@ -29,7 +27,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 scroll_horizontal_enabled = true
 scroll_horizontal = 0
-scroll_vertical_enabled = true
+scroll_vertical_enabled = false
 scroll_vertical = 0
 _sections_unfolded = [ "Pause", "Rect", "Scroll" ]
 

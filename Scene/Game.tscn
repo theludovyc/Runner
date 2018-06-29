@@ -28,6 +28,11 @@ run_speed_right = 100
 
 [node name="Monster" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 372.912, 272.277 )
+_sections_unfolded = [ "Transform" ]
+jump_speed = 200
+
+[connection signal="touchMonster" from="Player" to="." method="restart"]
+
+[connection signal="touchTrou" from="Player" to="." method="restart"]
 
 

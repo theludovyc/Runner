@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal touchMonster
+signal touchTrou
+
 export (int) var run_speed_idle = 50
 export (int) var run_speed_left = 100
 export (int) var run_speed_right = 50
@@ -44,3 +47,12 @@ func _physics_process(delta):
 	if is_on_floor():
 		if jumping:
 			jumping=false
+
+	for i in range(0, get_slide_count()):
+		var col = get_slide_collision(i).collider
+		match col.name:
+			"Monster":
+				emit_signal("touchMonster")
+			"Trou":
+				emit_signal("touchTrou")
+			

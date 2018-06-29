@@ -9,12 +9,21 @@ func _ready():
 	# Initialization here
 	pass
 
+func restart():
+	if $Scenes.thread_pop.is_active():
+		$Scenes.thread_pop.wait_to_finish()
+
+	get_tree().reload_current_scene()
+
 func _process(delta):
 	if Input.is_key_pressed(KEY_ESCAPE):
+		if $Scenes.thread_pop.is_active():
+			$Scenes.thread_pop.wait_to_finish()
+
 		get_tree().quit()
 
 	if Input.is_key_pressed(KEY_SPACE):
-		get_tree().reload_current_scene()
+		restart()
 
 	if Input.is_action_pressed('toggle_fullscreen'):
 		OS.window_fullscreen = !OS.window_fullscreen
