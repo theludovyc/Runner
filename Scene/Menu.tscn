@@ -1,15 +1,30 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scene/LevelsSelector.gd" type="Script" id=1]
-[ext_resource path="res://Scene/Background.gd" type="Script" id=2]
+[ext_resource path="res://Script/LevelsSelector.gd" type="Script" id=1]
+[ext_resource path="res://Script/Background.gd" type="Script" id=2]
 [ext_resource path="res://Art/level_selector.png" type="Texture" id=3]
-[ext_resource path="res://Script/Next.gd" type="Script" id=4]
-[ext_resource path="res://Script/Previous.gd" type="Script" id=5]
+[ext_resource path="res://Art/Ayuma2yk.ttf" type="DynamicFontData" id=4]
 
-[node name="main" type="Node" index="0"]
+[sub_resource type="DynamicFont" id=1]
+
+size = 80
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="main" type="Node"]
 
 script = ExtResource( 1 )
-maxLevel = 2
+maxLevel = 1
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
@@ -45,7 +60,6 @@ shortcut = null
 group = null
 flat = true
 align = 1
-script = ExtResource( 4 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="Previous" type="Button" parent="." index="3"]
@@ -71,33 +85,54 @@ shortcut = null
 group = null
 flat = true
 align = 1
-script = ExtResource( 5 )
 
-[node name="Button" type="Button" parent="." index="4"]
+[node name="Label" type="Label" parent="." index="4"]
 
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -144.0
-margin_top = -108.0
-margin_right = 143.0
-margin_bottom = -18.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 264.0
+margin_top = 783.0
+margin_right = 1337.0
+margin_bottom = 864.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
+mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Play"
-flat = false
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Appuyer sur flêche haut pour commencer"
 align = 1
-_sections_unfolded = [ "Pause" ]
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label2" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 861.0
+margin_right = 609.0
+margin_bottom = 892.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Fait par : Hellnem, Afendar, Robowarrior et theLudovyc"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="button_down" from="Next" to="." method="_on_next"]
 
