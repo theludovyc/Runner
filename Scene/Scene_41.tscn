@@ -6,7 +6,7 @@
 [ext_resource path="res://Prefab/Buisson_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefab/Trou.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Prefab/Crevasse_D.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Prefab/Platforme_M.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefab/Platforme_P.tscn" type="PackedScene" id=7]
 
 [node name="Scene_4" type="Node2D"]
 
@@ -43,11 +43,11 @@ position = Vector2( 1200, 500 )
 
 position = Vector2( 0, 500 )
 
-[node name="Platforme_M" parent="." index="8" instance=ExtResource( 7 )]
+[node name="Platforme_P" parent="." index="8" instance=ExtResource( 7 )]
 
-position = Vector2( 600, 700 )
+position = Vector2( 650, 700 )
 
-[node name="Platforme_M2" parent="." index="9" instance=ExtResource( 7 )]
+[node name="Platforme_P2" parent="." index="9" instance=ExtResource( 7 )]
 
 position = Vector2( 1250, 700 )
 

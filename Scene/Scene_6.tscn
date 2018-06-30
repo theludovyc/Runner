@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Script/SceneAfter.gd" type="Script" id=1]
+[ext_resource path="res://Prefab/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefab/Arbre_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefab/Trou.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefab/Platforme_M.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefab/Platforme_G.tscn" type="PackedScene" id=6]
+
+[node name="Scene_0" type="Node2D"]
+
+script = ExtResource( 1 )
+scenes = [ 5, 51 ]
+
+[node name="Background" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Arbre_1" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 800, 200 )
+
+[node name="Trou" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 0, 500 )
+
+[node name="Trou2" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 400, 500 )
+
+[node name="Trou3" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 800, 500 )
+
+[node name="Trou4" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 1200, 500 )
+
+[node name="Platforme_M2" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 1250, 700 )
+
+[node name="Platforme_G" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 450, 700 )
+
+

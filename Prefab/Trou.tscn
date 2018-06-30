@@ -8,7 +8,9 @@ custom_solver_bias = 0.0
 a = Vector2( 0, 600 )
 b = Vector2( 400, 600 )
 
-[node name="Trou" type="StaticBody2D"]
+[node name="Trou" type="StaticBody2D" groups=[
+"Trous",
+]]
 
 input_pickable = false
 collision_layer = 1

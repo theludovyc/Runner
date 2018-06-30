@@ -1,16 +1,33 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Script/Main.gd" type="Script" id=1]
 [ext_resource path="res://Script/Platforms.gd" type="Script" id=2]
 [ext_resource path="res://Scene/Scene_0.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefab/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefab/Monster.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/Ayuma2yk.ttf" type="DynamicFontData" id=6]
 
-[node name="Main" type="Node" index="0"]
+[sub_resource type="DynamicFont" id=1]
+
+size = 40
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
+goForwardMax = 5
 
-[node name="Scenes" type="Node" parent="." index="0"]
+[node name="Timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[node name="Scenes" type="Node" parent="." index="1"]
 
 script = ExtResource( 2 )
 speed = 350
@@ -19,19 +36,48 @@ speed = 350
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 4 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 868.887, 565.619 )
 run_speed_idle = 350
 run_speed_left = 450
 run_speed_right = 100
 
-[node name="Monster" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Monster" parent="." index="3" instance=ExtResource( 5 )]
 
 _sections_unfolded = [ "Transform" ]
 jump_speed = 200
 min_cooldown = 3
 max_cooldown = 10
+
+[node name="Score" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1526.0
+margin_top = 844.0
+margin_right = 1583.0
+margin_bottom = 885.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="timeout" from="Timer" to="." method="onTimerTimeout"]
+
+[connection signal="goForward" from="Player" to="." method="onPlayer_goForward"]
 
 [connection signal="touchMonster" from="Player" to="." method="restart"]
 

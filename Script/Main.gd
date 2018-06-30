@@ -4,6 +4,11 @@ extends Node
 # var a = 2
 # var b = "textvar"
 
+export (int) var goForwardMax=5
+
+var score=0
+var goForwardTmp=0
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -22,6 +27,32 @@ func _process(delta):
 
 		get_tree().change_scene("res://Scene/Menu.tscn")
 
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	$Score.text=str(score)
+
+func onTimerTimeout():
+	var dif=$Player.position.x-$Monster.position.x
+
+	if dif<100:
+		score+=9
+	elif dif<200:
+		score+=8
+	elif dif<300:
+		score+=7
+	elif dif<400:
+		score+=6
+	elif dif<500:
+		score+=5
+	elif dif<600:
+		score+=4
+	elif dif<700:
+		score+=3
+	elif dif<800:
+		score+=2
+	else:
+		score+=1
+
+func onPlayer_goForward():
+	goForwardTmp+=1
+	if goForwardTmp>goForwardMax:
+		goForwardTmp=0
+		score+=1
